@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+
+@theme {
+    --animate-background: background-move ease infinite;
+
+    @keyframes background-move {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    background-color: #323643;
+    color: #F7F7F7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bebas Neue', cursive;
+    margin: 0;
+    /* color: #fff; */
+    /* Let Tailwind control the color */
+}
