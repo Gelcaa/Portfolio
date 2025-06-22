@@ -1,10 +1,22 @@
+import React from "react";
 import { SiGmail, SiLinkedin, SiGithub } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 import PrimaryButton from "../components/Buttons/PrimaryButton";
+import BlurText from "../components/animations/BlurText";
+import Aurora from "../components/animations/Aurora";
 
-export default function Home() {
-  return (
-    <>
+const Home = () => (
+  <div style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
+    <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+      <Aurora
+        colorStops={["#93DEFF", "#606470", "#323643"]}
+        blend={0.5}
+        amplitude={1.0}
+        speed={0.5}
+      />
+    </div>
+    {/* Main content */}
+    <div style={{ position: "relative", zIndex: 1 }}>
       <main>
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-between min-h-screen sm:px-2 md:px-13 lg:px-30 xl:px-70 px-4 gap-8">
           {/* Right: Profile Image (on top in mobile, right in desktop) */}
@@ -15,16 +27,21 @@ export default function Home() {
             <img
               src="/profile.png"
               alt="Profile"
-              className="rounded-full w-60 h-60 md:w-80 md:h-80 lg:w-90 lg:h-90 xl:w-110 xl:h-110 bg-[#323643]"
+              className="rounded-full w-60 h-60 md:w-80 md:h-80 lg:w-90 lg:h-90 xl:w-110 xl:h-110 bg-[#0A0A0A]"
             />
           </a>
 
           {/* Left: Greetings */}
           <div className="order-2 md:order-1 flex flex-col md:items-start items-center gap-8 text-center md:text-left">
             <h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl leading-none">
-              <span className="block">HI, I AM</span>
-              <span className="block">ANGELICA YSABEL BUAN.</span>
+              <span className="block">
+                <BlurText text="HI, I AM" />
+              </span>
+              <span className="block">
+                <BlurText text="ANGELICA YSABEL BUAN." />
+              </span>
             </h1>
+
             <p className="font-manrope text-gray-300 text-lg md:text-2xl">
               <Typewriter
                 words={[
@@ -69,6 +86,8 @@ export default function Home() {
           </div>
         </div>
       </main>
-    </>
-  );
-}
+    </div>
+  </div>
+);
+
+export default Home;
