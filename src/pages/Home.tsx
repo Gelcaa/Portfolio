@@ -6,7 +6,10 @@ import BlurText from "../components/animations/BlurText";
 import Aurora from "../components/animations/Aurora";
 
 const Home = () => (
-  <div style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
+  <div
+    id="home"
+    style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
+  >
     <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
       <Aurora
         colorStops={["#93DEFF", "#606470", "#323643"]}
@@ -62,12 +65,12 @@ const Home = () => (
                 text="VIEW RESUME"
                 color="bg-[#93DEFF]"
                 textColor="text-black"
-                href="mailto:23angelicaysabelbuan@gmail.com"
+                href="https://drive.google.com/file/d/1xi94T1VQJjgjwj_TzXBj6XJs7bbMYARi/view?usp=sharing"
               />
               <PrimaryButton
                 color="bg-[#606470]"
                 textColor="text-white"
-                href="linkedin.com/in/angelica-ysabel-buan"
+                href="https://www.linkedin.com/in/angelica-ysabel-buan"
                 icon={<SiLinkedin size={20} />}
               />
               <PrimaryButton
@@ -79,7 +82,7 @@ const Home = () => (
               <PrimaryButton
                 color="bg-[#606470]"
                 textColor="text-white"
-                href="mailto:23angelicaysabelbuan@gmail.com"
+                href="https://github.com/Gelcaa"
                 icon={<SiGithub size={20} />}
               />
             </div>

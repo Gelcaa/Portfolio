@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Spotlight } from "../components/spotlight-new";
+import GlassIcons from "../components/animations/GlassIcons";
 
 type SkillCategory =
   | "Languages"
@@ -51,8 +53,8 @@ const skills: Record<SkillCategory, Skill[]> = {
     },
     {
       name: "XML",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/filezilla/filezilla-plain.svg",
-    }, // Example logo
+      src: "logo/xml.svg",
+    },
   ],
   "Frameworks & Libraries": [
     {
@@ -117,65 +119,91 @@ const skills: Record<SkillCategory, Skill[]> = {
     },
     {
       name: "Agile",
-      src: "https://cdn-icons-png.flaticon.com/512/10499/10499613.png",
-    }, // Example logo
+      src: "logo/agile.svg",
+    },
     {
       name: "CI/CD",
-      src: "https://cdn-icons-png.flaticon.com/512/10329/10329051.png",
-    }, // Example logo
+      src: "logo/ci-cd.svg",
+    },
     {
       name: "RESTful APIs",
-      src: "https://cdn-icons-png.flaticon.com/512/10883/10883668.png",
-    }, // Example logo
+      src: "logo/api.svg",
+    },
     {
       name: "ML",
-      src: "https://cdn-icons-png.flaticon.com/512/3767/3767084.png",
-    }, // Example logo
+      src: "logo/machine-learning.svg",
+    },
     {
       name: "NLP",
-      src: "https://cdn-icons-png.flaticon.com/512/8578/8578693.png",
-    }, // Example logo
+      src: "logo/nlp.svg",
+    },
   ],
 };
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState<SkillCategory>("Languages");
 
+  // Map your skills to GlassIcons items
+  const glassItems = skills[activeTab].map((skill) => ({
+    icon: (
+      <img
+        src={skill.src}
+        alt={skill.name}
+        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16"
+      />
+    ),
+    color: "blue",
+    label: skill.name,
+  }));
+
   return (
-    <div className="flex flex-col justify-center sm:px-2 md:px-13 lg:px-30 xl:px-70 px-4 p-3 md:p-5 lg:p-10 xl:p-20">
-      <h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl leading-none mb-8 pb-2">
-        My Capabilities
-      </h1>
-
-      {/* Clickable Tabs */}
-      <div className="flex flex-wrap gap-4 pb-20">
-        {Object.keys(skills).map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveTab(category as SkillCategory)}
-            className={`px-4 py-2 rounded-full border ${
-              activeTab === category
-                ? "bg-slate-700 text-white"
-                : "bg-white text-slate-700"
-            } transition-all`}
-          >
-            {category}
-          </button>
-        ))}
+    <div
+      id="skills"
+      style={{
+        position: "relative",
+        minHeight: "100vh",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Spotlight */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+        }}
+      >
+        <Spotlight />
       </div>
+      {/* Main Content */}
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <div className="flex flex-col justify-center md:px-12 lg:px-30 xl:px-70 p-9 lg:p-10 xl:p-20">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl leading-none mb-8 pb-2">
+            My Capabilities
+          </h1>
 
-      {/* Logos Display */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
-        {skills[activeTab].map((skill) => (
-          <div key={skill.name} className="flex flex-col items-center">
-            <img
-              src={skill.src}
-              alt={skill.name}
-              className="h-16 w-16 object-contain mb-2"
-            />
-            {/* <p className="text-gray-300 text-sm text-center">{skill.name}</p> */}
+          {/* Clickable Tabs */}
+          <div className="flex flex-wrap gap-4 pb-20">
+            {Object.keys(skills).map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveTab(category as SkillCategory)}
+                className={`px-4 py-2 rounded-full border ${
+                  activeTab === category
+                    ? "bg-[#93DEFF] text-black"
+                    : "bg-[#606470] text-white"
+                } transition-all`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-        ))}
+
+          {/* Animated Glass Icons */}
+          <div style={{ position: "relative" }}>
+            <GlassIcons items={glassItems} />
+          </div>
+        </div>
       </div>
     </div>
   );
