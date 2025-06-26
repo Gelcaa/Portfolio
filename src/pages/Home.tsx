@@ -1,4 +1,3 @@
-import React from "react";
 import { SiGmail, SiLinkedin, SiGithub } from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 import PrimaryButton from "../components/Buttons/PrimaryButton";

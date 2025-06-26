@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Spotlight } from "../components/spotlight-new";
 import GlassIcons from "../components/animations/GlassIcons";
 
 type SkillCategory =
@@ -172,9 +171,7 @@ export default function Skills() {
           inset: 0,
           zIndex: 0,
         }}
-      >
-        <Spotlight />
-      </div>
+      ></div>
       {/* Main Content */}
       <div style={{ position: "relative", zIndex: 1 }}>
         <div className="flex flex-col justify-center md:px-12 lg:px-30 xl:px-70 p-9 lg:p-10 xl:p-20">
