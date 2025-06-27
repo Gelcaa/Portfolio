@@ -21,7 +21,13 @@ function App() {
       <div className="w-full h-[1px] bg-[#484848] my-4"></div>
       {/* Footer Trademark */}
       <footer className="w-full text-center py-6 text-gray-500 text-sm">
-        © {new Date().getFullYear()} @angelicaysabelbuan. All rights reserved.
+        ©{" "}
+        {new Date().toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })}{" "}
+        @angelicaysabelbuan. All rights reserved.
       </footer>
     </>
   );

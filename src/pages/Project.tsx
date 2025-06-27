@@ -1,3 +1,4 @@
+import { BackgroundGradient } from "../components/animations/background-gradient";
 import ConceptCard from "../components/ConceptCard";
 import PrimaryButton from "../components/Buttons/PrimaryButton";
 import { SiGithub } from "react-icons/si";
@@ -10,24 +11,22 @@ const Project = () => (
     <h1 className="text-4xl md:text-6xl lg:text-7xl leading-none mb-8 pb-2">
       Projects
     </h1>
-    <p>
-      Here are some of the selected projects that showcase my passion in
-      full-stack development.
-    </p>
     {/* Project Card and Details Side by Side */}
     <div className="flex flex-col lg:flex-row gap-8 mt-8">
       {/* Left: Concept Card */}
       <div className="w-full lg:w-[400px] flex-shrink-0">
-        <ConceptCard
-          label="Mobile Application"
-          image="/foodRecommendation.png"
-          alt="Adventure Time Concept Website"
-        />
+        <BackgroundGradient className="rounded-2xl">
+          <ConceptCard
+            label="Mobile Application"
+            image="/foodRecommendation.png"
+            alt="Adventure Time Concept Website"
+          />
+        </BackgroundGradient>
       </div>
       {/* Right: Project Details */}
       <div className="rounded-2xl p-6 flex-1 text-gray-100 flex flex-col justify-between min-w-[320px]">
         <div>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+          <h2 className="text-2xl md:text-3xl mb-2">
             AnimoEats – Personalized Food Recommendation App for DLSU-D
           </h2>
           <p className="mb-6 text-base md:text-lg text-gray-300">
@@ -62,30 +61,24 @@ const Project = () => (
             textColor="text-black"
             href="https://www.youtube.com/watch?v=8ByqymtRtZ0"
           />
-          {/* <a
-            href="https://github.com/your-repo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-md bg-transparent border border-[#baff6b] text-[#baff6b] font-semibold hover:bg-[#baff6b] hover:text-[#232323] transition"
-          >
-            SEE ON GITHUB <FiGithub /> */}
-          {/* </a> */}
         </div>
       </div>
     </div>
     <div className="flex flex-col lg:flex-row gap-8 mt-8">
       {/* Left: Concept Card */}
       <div className="w-full lg:w-[400px] flex-shrink-0">
-        <ConceptCard
-          label="Website"
-          image="/coshapee.png"
-          alt="Coshapee Website"
-        />
+        <BackgroundGradient className="rounded-2xl">
+          <ConceptCard
+            label="Website"
+            image="/coshapee.png"
+            alt="Coshapee Website"
+          />
+        </BackgroundGradient>
       </div>
       {/* Right: Project Details */}
       <div className="rounded-2xl p-6 flex-1 text-gray-100 flex flex-col justify-between min-w-[320px]">
         <div>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+          <h2 className="text-2xl md:text-3xl mb-2">
             Co-Shapee Merch Gallery
           </h2>
           <p className="mb-6 text-base md:text-lg text-gray-300">
@@ -130,16 +123,18 @@ const Project = () => (
     <div className="flex flex-col lg:flex-row gap-8 mt-8">
       {/* Left: Concept Card */}
       <div className="w-full lg:w-[400px] flex-shrink-0">
-        <ConceptCard
-          label="Mobile Application"
-          image="/foodDelivery.png"
-          alt="AnimoEats Mobile App"
-        />
+        <BackgroundGradient className="rounded-2xl">
+          <ConceptCard
+            label="Mobile Application"
+            image="/foodDelivery.png"
+            alt="AnimoEats Mobile App"
+          />
+        </BackgroundGradient>
       </div>
       {/* Right: Project Details */}
       <div className="rounded-2xl p-6 flex-1 text-gray-100 flex flex-col justify-between min-w-[320px]">
         <div>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+          <h2 className="text-2xl md:text-3xl mb-2">
             Co-Shapee Merch Gallery
           </h2>
           <p className="mb-6 text-base md:text-lg text-gray-300">
