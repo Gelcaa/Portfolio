@@ -78,9 +78,7 @@ const Project = () => (
       {/* Right: Project Details */}
       <div className="rounded-2xl p-6 flex-1 text-gray-100 flex flex-col justify-between min-w-[320px]">
         <div>
-          <h2 className="text-2xl md:text-3xl mb-2">
-            Co-Shapee Merch Gallery
-          </h2>
+          <h2 className="text-2xl md:text-3xl mb-2">Co-Shapee Merch Gallery</h2>
           <p className="mb-6 text-base md:text-lg text-gray-300">
             A visual merchandise catalog website showcasing designs, styles, and
             product details for a DLSU-D organization. As the project head, I
@@ -134,9 +132,7 @@ const Project = () => (
       {/* Right: Project Details */}
       <div className="rounded-2xl p-6 flex-1 text-gray-100 flex flex-col justify-between min-w-[320px]">
         <div>
-          <h2 className="text-2xl md:text-3xl mb-2">
-            Co-Shapee Merch Gallery
-          </h2>
+          <h2 className="text-2xl md:text-3xl mb-2">AnimoEats – Food Delivery App for DLSU-D</h2>
           <p className="mb-6 text-base md:text-lg text-gray-300">
             A Flutter-based food delivery application designed to streamline
             dining experiences at DLSU-D Food Square. The app features a
